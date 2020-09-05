@@ -1,0 +1,4 @@
+include default_cell/static/main.js
+include default_cell/static/description.yml
+include default_cell/static/README.md
+recursive-include jupyter-config *.json
