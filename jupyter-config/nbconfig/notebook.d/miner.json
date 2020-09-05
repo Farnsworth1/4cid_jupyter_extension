@@ -1,5 +1,5 @@
 {
   "load_extensions": {
-    "default_cell/main": true
+    "miner/Miner": true
   }
 }

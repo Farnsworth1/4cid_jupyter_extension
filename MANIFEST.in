@@ -1,4 +1,11 @@
-include default_cell/static/main.js
-include default_cell/static/description.yml
-include default_cell/static/README.md
+include LICENSE.md
+include README.md
+include package.json
+include miner/static/main.js
+include miner/static/main.css
+include miner/static/icon.png
+include miner/static/execution-timings-box.png
+include miner/static/execution-timings-menu.png
+include miner/static/description.yaml
+include miner/static/README.md
 recursive-include jupyter-config *.json

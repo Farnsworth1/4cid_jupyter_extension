@@ -1,9 +1,10 @@
 Type: IPython Notebook Extension
-Name: ExecuteTime
-Description: Display when each cell has been executed and how long it took
+Name: Miner
+Description: suggests the next appropriate task level or task Group based on certain criterias.
+  User data (ex. number of runs) is "collected" and saved as metadata in the notebook.
 Link: README.md
 Icon: icon.png
-Main: ExecuteTime.js
+Main: main.js
 Compatibility: 4.x, 5.x
 Parameters:
 

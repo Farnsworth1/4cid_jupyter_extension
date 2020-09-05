@@ -1,5 +1,6 @@
-Execute Time
+Miner
 ============
+This extension is based on the extension ``Execute time``. 
 
 This extension displays when the last execution of a code cell occurred, and
 how long it took.

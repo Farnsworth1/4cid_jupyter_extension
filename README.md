@@ -1,16 +1,16 @@
 # 4cid_jupyter_extension
 This project aims to create and develop a jupyter notebook extension that helps students with their exercises in lectures in `Python Introduction` (See https://github.com/ceedee666/python_introduction)
 
-The Jupyter Extension suggests the next appropriate task level and Group based on certain criteria.
-User data (ex. number of runs) is "collected" and saved as metadata in the notebook.
+Miner is a Jupyter Extension that suggests the next appropriate task level and task Group based on certain criteria.
+User data, ex. number of runs, is "collected" and saved as metadata in the notebook.
 
 **Concept Requirements**:
-1. Each notebook contains only one exercise. The cell for this exercise is identified. The practice cell is the 3rd cell.
-2. Student data is collected and stored locally. I.e. Decentralized.
+1. Each notebook contains only one exercise. The cell for this exercise is identified. The exercise cell is the 3rd cell.
+2. Users data is collected and stored locally. I.e. decentralized.
 
 The following criteria are considered for the selection of the next level:
 1. The number of executions of the exercise cell until success. How often the student tries his solution is determining for his fitness in programming.
-1. Other suggestions are welcome. 
+1. Other suggestions for further criteria are welcome. 
 
 # Contributing
 

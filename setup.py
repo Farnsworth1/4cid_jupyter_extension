@@ -3,8 +3,6 @@
 
 # Copyright (c) - Maher Albezem
 
-# pylint: disable = C0103
-
 """
 Packaging
 """
@@ -16,29 +14,37 @@ import os
 from setuptools import setup, find_packages
 
 NAME = "miner"
-version = 0.1
+
 INSTALL_REQUIRES = [
     'notebook>=6.0',
 ]
 
-with open('miner/static/README.md') as readme:
+with open('README.md') as readme:
     README = readme.read()
 
+# Enable the nbextension (like jupyter nbextension enable --sys-prefix)
+DATA_FILES = [
+    ("etc/jupyter/nbconfig/notebook.d", [
+        "jupyter-config/nbconfig/notebook.d/miner.json"
+    ]),
+]
+
+# Install the nbextension (like jupyter nbextension install --sys-prefix).
+# More precisely, everything in the miner/static directory and its
+# subdirectories should be installed
+nbext = ["share", "jupyter", "nbextensions", NAME]
+for (path, dirs, files) in os.walk(os.path.join("miner", "static")):
+    # Files to install
+    srcfiles = [os.path.join(path, f) for f in files]
+    # Installation path components, removing miner/static from "path"
+    dst = nbext + path.split(os.sep)[2:]
+    DATA_FILES.append((os.path.join(*dst), srcfiles))
 
 setup_args = dict(
     name=NAME,
-    version=version,
+    version=1.0,
     packages=find_packages(),
-    data_files=[
-        # like `jupyter nbextension install --sys-prefix`
-        ("share/jupyter/nbextensions/miner", [
-            "miner/static/main.js",
-        ]),
-        # like `jupyter nbextension enable --sys-prefix`
-        ("etc/jupyter/nbconfig/notebook.d", [
-            "jupyter-config/nbconfig/notebook.d/miner.json"
-        ])
-    ],
+    data_files=DATA_FILES,
     include_package_data=True,
     install_requires=INSTALL_REQUIRES,
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4',
