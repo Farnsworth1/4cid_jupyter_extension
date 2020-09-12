@@ -4,9 +4,11 @@ This project aims to create and develop a jupyter notebook extension that helps 
 Miner is a Jupyter Extension that suggests the next appropriate task level and task Group based on certain criteria.
 User data, ex. number of runs, is "collected" and saved as metadata in the notebook.
 
+I took the jupyter extension execution time will be modifying it.
+
 **Concept Requirements**:
 1. Each notebook contains only one exercise. The cell for this exercise is identified. The exercise cell is the 3rd cell.
-2. Users data is collected and stored locally. I.e. decentralized.
+2. Users data is collected and stored locally for each user of exercises notebooks. I.e. decentralized.
 
 The following criteria are considered for the selection of the next level:
 1. The number of executions of the exercise cell until success. How often the student tries his solution is determining for his fitness in programming.
@@ -26,7 +28,9 @@ While there are numerous existing extensions, we can also write our own extensio
 All extensions will be then found inside you environment. For example in windows Anacondas environment all nbextensions will be found
 in ``C:\Users\User\anaconda3\envs\env\Lib\site-packages\jupyter_contrib_nbextensions``, Where `env` is the environment name.
 
-1. inside the extension directory (for miner extension this projects root directory) you want to install run the following two commands
+1. to install the package run pip install setup.py inside project root directory.
+
+1. alternatively you want to install run the following two commands to activate the extension manually
     ``jupyter nbextension install <extension_name> --sys-prefix`` 
     
     ``jupyter nbextension enable <extension_name> --sys-prefix``
@@ -40,7 +44,7 @@ in ``C:\Users\User\anaconda3\envs\env\Lib\site-packages\jupyter_contrib_nbextens
 1. When you make a change to the extension files while developing and you want to see the effects in 
 a Jupyter Notebook,you need to run the commands in the previous step
 1. In your jupyter server page you can also activate/deactivate each extension under the tab ``Nbextensions``
-1. Otherwise you can disable and remove an extension with the following commands:
+1. alternatively you can disable and remove an extension with the following commands:
  
     disable a package with:
     ``jupyter nbextension disable <extension_name> --py --sys-prefix``
@@ -57,7 +61,9 @@ There are 3 parts (at minimum) to any Jupyter Notebook extension:
 1. ``main.js`` : The Javascript code for the extension itself
 1. ``README.md`` : A markdown description of extension
 
-Jupyter extensions can be distributed as packages as shown [here](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Distributing%20Jupyter%20Extensions%20as%20Python%20Packages.html#Example---Server-extension-and-nbextension)
+### Project structure
+
+Jupyter extensions can be distributed as packages as shown in [here](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Distributing%20Jupyter%20Extensions%20as%20Python%20Packages.html#Example---Server-extension-and-nbextension)
 So ex. the package structure of ``miner`` extension looks like this:
 
 │   .gitignore
